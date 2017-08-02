@@ -964,7 +964,10 @@ class Server extends ServerContainer implements IServerContainer {
 				$factory,
 				$c->getUserManager(),
 				$c->getLazyRootFolder(),
-				$c->getEventDispatcher()
+				$c->getEventDispatcher(),
+				$c->getMailer(),
+				$c->getURLGenerator(),
+				$c->getThemingDefaults()
 			);
 
 			return $manager;
@@ -1249,7 +1252,6 @@ class Server extends ServerContainer implements IServerContainer {
 	}
 
 	/**
-	 * @internal For internal use only
 	 * @return \OC\SystemConfig
 	 */
 	public function getSystemConfig() {

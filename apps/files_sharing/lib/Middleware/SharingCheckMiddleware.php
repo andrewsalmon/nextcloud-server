@@ -28,6 +28,7 @@ namespace OCA\Files_Sharing\Middleware;
 use OCA\Files_Sharing\Controller\ExternalSharesController;
 use OCA\Files_Sharing\Controller\ShareController;
 use OCP\App\IAppManager;
+use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\NotFoundResponse;
 use OCP\AppFramework\Middleware;
 use OCP\Files\NotFoundException;
@@ -85,7 +86,7 @@ class SharingCheckMiddleware extends Middleware {
 	/**
 	 * Check if sharing is enabled before the controllers is executed
 	 *
-	 * @param \OCP\AppFramework\Controller $controller
+	 * @param Controller $controller
 	 * @param string $methodName
 	 * @throws NotFoundException
 	 * @throws S2SException
@@ -112,7 +113,7 @@ class SharingCheckMiddleware extends Middleware {
 	/**
 	 * Return 404 page in case of a not found exception
 	 *
-	 * @param \OCP\AppFramework\Controller $controller
+	 * @param Controller $controller
 	 * @param string $methodName
 	 * @param \Exception $exception
 	 * @return NotFoundResponse
